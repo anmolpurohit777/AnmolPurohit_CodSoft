@@ -31,18 +31,23 @@ int main()
                 break;
             case '/':
                 if(n2==0)
-                    throw n2;
+                    {
+                        flag=1;
+                        throw n2;  
+                    }
                 ans=n1/n2;
                 break;
             default:
                 cout<<"Invalid operation!";
-            cout<<"Answer:"<<ans;
+                
         }
     }
     catch(double x)
     {
         cout<<"Divide by zero Exception!";
     }
+    if(flag==0)
+        cout<<"Answer:"<<ans;
 
     return 0;
 }
